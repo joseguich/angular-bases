@@ -1,0 +1,34 @@
+<dl>
+    <td>Nombre:</td>
+    <dd>{{ name }}</dd>
+
+    <td>Edad:</td>
+    <dd>{{ age }}</dd>
+
+    <td>Algún método:</td>
+    <dd>{{ heroMethod }}</dd>
+
+    <td>Información:</td>
+    <dd>{{ heroInfo() }}</dd>
+</dl>
+<button
+    *ngIf="name !== 'Superman'"
+    (click)="changeName()"
+    class="btn btn-primary mx-2 py-2 fw-bold fs-4"
+>
+    Cambiar Nombre
+</button>
+<button
+    *ngIf="age !== 36"
+    (click)="changeAge()"
+    class="btn btn-primary mx-2 py-2 fw-bold fs-4"
+>
+    Cambiar Edad
+</button>
+<button
+    *ngIf="name !== 'ironman' || age !== 45"
+    (click)="resetInfo()"
+    class="btn btn-primary mx-2 py-2 fw-bold fs-4"
+>
+    Restablecer
+</button>
