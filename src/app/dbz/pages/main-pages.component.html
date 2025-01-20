@@ -2,16 +2,17 @@
 <hr>
 
 <div class="row">
-    <div class="col">
-        <!-- Comunicamer con el componente hijo -->
-        <dbz-list
-            [listCharacter]="character"
-            [title]="title"
-        ></dbz-list>
+  <div class="col">
+    <!-- Comunicamer con el componente hijo -->
+    <dbz-list
+      [listCharacter]="dbzService.character"
+      [title]="dbzService.title"
+      (onDelete)="dbzService.onDelete($event)"></dbz-list>
 
-    </div>
+  </div>
 
-    <div class="col">
-        <dbz-add-character (onNewCharacter)="onNewCharacter($event)"></dbz-add-character>
-    </div>
+  <div class="col">
+    <dbz-add-character
+      (onNewCharacter)="dbzService.onNewCharacter($event)"></dbz-add-character>
+  </div>
 </div>

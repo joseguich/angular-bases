@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Character } from '../../interfaces/list-character.interface';
 
 @Component({
@@ -11,7 +11,6 @@ import { Character } from '../../interfaces/list-character.interface';
 export class ListComponent {
   //Comunicarno con el padre
   @Input()
-
   // Un listado por default de los personajes.
   public listCharacter: Character[] = [
     {
@@ -22,4 +21,12 @@ export class ListComponent {
 
   @Input()
   public title: string = 'Lista';
+
+  @Output()
+  public onDelete: EventEmitter<number> = new EventEmitter();
+
+  deleteCharacter(index: number): void {
+    // TODO Emitit.el.ID.del.personaje
+    this.onDelete.emit(index);
+  }
 }
