@@ -1,0 +1,17 @@
+<h1>DBZ Personajes</h1>
+<hr>
+
+<div class="row">
+    <div class="col">
+        <!-- Comunicamer con el componente hijo -->
+        <dbz-list
+            [listCharacter]="character"
+            [title]="title"
+        ></dbz-list>
+
+    </div>
+
+    <div class="col">
+        <dbz-add-character (onNewCharacter)="onNewCharacter($event)"></dbz-add-character>
+    </div>
+</div>
