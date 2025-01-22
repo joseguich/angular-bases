@@ -57,3 +57,17 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+## Command to run script to upload pages to github
+
+"build:href":"ng build --base-href ./",
+
+    "build:github":"npm run delete:docs && npm run build:href && npm run copy:dist",
+
+    "watch":"ng build --watch --configuration development",
+
+    "test":"ng test",
+
+    "delete:docs":"del docs",
+
+    "copy:dist":"copyfiles dist/bases/* dist/bases/browser/* ./docs -f"
