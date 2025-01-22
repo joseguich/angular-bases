@@ -23,10 +23,13 @@ export class ListComponent {
   public title: string = 'Lista';
 
   @Output()
-  public onDelete: EventEmitter<number> = new EventEmitter();
+  public onDelete: EventEmitter<string> = new EventEmitter();
 
-  deleteCharacter(index: number): void {
+  deleteCharacter(id?: string): void {
     // TODO Emitit.el.ID.del.personaje
-    this.onDelete.emit(index);
+
+    if (!id) return;
+
+    this.onDelete.emit(id);
   }
 }

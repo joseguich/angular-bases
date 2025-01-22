@@ -9,5 +9,22 @@ import { DbzService } from '../services/services.service';
 })
 export class MainPagesComponent {
   // Injeciones
-  constructor(public dbzService: DbzService) {}
+  //Los servicios siempre debe ir privados
+  constructor(private dbzService: DbzService) {}
+
+  get characters(): Character[] {
+    return this.dbzService.character;
+  }
+
+  get titlePages(): string {
+    return this.dbzService.title;
+  }
+
+  onAddCharacter(character: Character): void {
+    this.dbzService.onNewCharacter(character);
+  }
+
+  onDeleteCharacter(id: string): void {
+    this.dbzService.onDelete(id);
+  }
 }
